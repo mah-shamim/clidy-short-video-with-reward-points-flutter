@@ -1,0 +1,224 @@
+/* styles.css */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Roboto', sans-serif;
+    color: #d6d6d6;
+    background-color: #101019;
+    overflow-x: hidden;
+  }
+  
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: rgba(25, 25, 35, 0.85);
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(8px);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  
+  header .logo {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #8bc6ec;
+  }
+  
+  header nav a {
+    color: #d6d6d6;
+    margin-left: 1.5rem;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+  
+  header nav a:hover {
+    color: #8bc6ec;
+  }
+  
+  /* Contenedor principal */
+  .container {
+    display: flex;
+    height: calc(100vh - 70px);
+    overflow: hidden;
+  }
+  
+
+  aside {
+    width: 250px;
+    background: rgba(20, 20, 30, 0.85);
+    padding: 2rem;
+    border-right: 1px solid rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    transition: all 0.3s ease;
+    position: relative;
+  }
+  
+  aside h2 {
+    color: #8bc6ec;
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+  }
+  
+  .sidebar-menu {
+    list-style: none;
+    padding-left: 0;
+  }
+  
+  .sidebar-menu li {
+    margin-bottom: 1rem;
+  }
+  
+  .sidebar-menu a {
+    color: #d6d6d6;
+    text-decoration: none;
+    font-size: 1rem;
+    display: block;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+  }
+  
+  .sidebar-menu a:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+  
+  .submenu {
+    display: none;
+    list-style: none;
+    padding-left: 1rem;
+  }
+  
+  .accordion-item a::after {
+    content: "▼";
+    float: right;
+    font-size: 0.8rem;
+    transition: transform 0.3s;
+  }
+  
+  .accordion-item.open a::after {
+    transform: rotate(-180deg);
+  }
+  
+  /* Main content */
+  main {
+    flex: 1;
+    padding: 2rem;
+    background: linear-gradient(135deg, #0f0f14, #1a1a25);
+    color: #d6d6d6;
+    overflow-y: auto;
+  }
+  
+  main h1 {
+    font-size: 1.8rem;
+    color: #8bc6ec;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .documentation-item {
+    margin-top: 2rem;
+    padding: 2rem;
+    background: rgba(30, 30, 40, 0.85);
+    border-radius: 12px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .documentation-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.5);
+  }
+  
+  .documentation-item h3 {
+    font-size: 1.3rem;
+    color: #8bc6ec;
+    margin-bottom: 0.8rem;
+  }
+  
+  .documentation-item p {
+    color: #c4c4c4;
+    line-height: 1.6;
+  }
+  
+  .documentation-item img {
+    width: 100%;
+    max-width: 600px;
+    margin-top: 1rem;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  pre {
+    background-color: rgba(40, 40, 50, 0.85);
+    padding: 1rem;
+    color: #e0e0e0;
+    border-radius: 8px;
+    margin-top: 1.2rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  /* Smooth scrolling and hover effect for links */
+  a {
+    transition: color 0.2s ease;
+  }
+  
+  a:hover {
+    color: #8bc6ec;
+  }
+  
+
+.image-modal {
+    display: none; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .image-modal img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.6);
+    transition: transform 0.3s ease;
+  }
+  
+  .image-modal img:hover {
+    transform: scale(1.05); 
+  }
+  
+  
+  .image-modal .close-btn {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 2rem;
+    color: #ffffff;
+    cursor: pointer;
+    transition: color 0.2s ease;
+  }
+  
+  .image-modal .close-btn:hover {
+    color: #8bc6ec;
+  }
+  

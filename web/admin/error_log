@@ -1,0 +1,49 @@
+[05-Oct-2024 21:11:27 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`dkawoco1_claro`.`videos`, CONSTRAINT `fk_user_id` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`)) in /home/dkawoco1/status.dkawo.com/admin/manage_users.php:18
+Stack trace:
+#0 /home/dkawoco1/status.dkawo.com/admin/manage_users.php(18): PDOStatement->execute()
+#1 {main}
+  thrown in /home/dkawoco1/status.dkawo.com/admin/manage_users.php on line 18
+[05-Oct-2024 21:12:02 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`dkawoco1_claro`.`videos`, CONSTRAINT `fk_user_id` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`)) in /home/dkawoco1/status.dkawo.com/admin/manage_users.php:18
+Stack trace:
+#0 /home/dkawoco1/status.dkawo.com/admin/manage_users.php(18): PDOStatement->execute()
+#1 {main}
+  thrown in /home/dkawoco1/status.dkawo.com/admin/manage_users.php on line 18
+[07-Oct-2024 19:00:57 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`dkawoco1_claro`.`favorites`, CONSTRAINT `favorites_ibfk_2` FOREIGN KEY (`video_id`) REFERENCES `videos` (`id`)) in /home/dkawoco1/status.dkawo.com/admin/manage_videos.php:18
+Stack trace:
+#0 /home/dkawoco1/status.dkawo.com/admin/manage_videos.php(18): PDOStatement->execute()
+#1 {main}
+  thrown in /home/dkawoco1/status.dkawo.com/admin/manage_videos.php on line 18
+[07-Oct-2024 19:01:03 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`dkawoco1_claro`.`favorites`, CONSTRAINT `favorites_ibfk_2` FOREIGN KEY (`video_id`) REFERENCES `videos` (`id`)) in /home/dkawoco1/status.dkawo.com/admin/delete_video.php:17
+Stack trace:
+#0 /home/dkawoco1/status.dkawo.com/admin/delete_video.php(17): PDOStatement->execute()
+#1 {main}
+  thrown in /home/dkawoco1/status.dkawo.com/admin/delete_video.php on line 17
+[07-Oct-2024 19:01:27 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`dkawoco1_claro`.`favorites`, CONSTRAINT `favorites_ibfk_2` FOREIGN KEY (`video_id`) REFERENCES `videos` (`id`)) in /home/dkawoco1/status.dkawo.com/admin/manage_videos.php:18
+Stack trace:
+#0 /home/dkawoco1/status.dkawo.com/admin/manage_videos.php(18): PDOStatement->execute()
+#1 {main}
+  thrown in /home/dkawoco1/status.dkawo.com/admin/manage_videos.php on line 18
+[07-Oct-2024 19:01:36 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`dkawoco1_claro`.`favorites`, CONSTRAINT `favorites_ibfk_2` FOREIGN KEY (`video_id`) REFERENCES `videos` (`id`)) in /home/dkawoco1/status.dkawo.com/admin/delete_video.php:17
+Stack trace:
+#0 /home/dkawoco1/status.dkawo.com/admin/delete_video.php(17): PDOStatement->execute()
+#1 {main}
+  thrown in /home/dkawoco1/status.dkawo.com/admin/delete_video.php on line 17
+[03-Nov-2024 18:21:25 UTC] PHP Warning:  Use of undefined constant hola - assumed 'hola' (this will throw an Error in a future version of PHP) in /home/dkawoco1/status.dkawo.com/admin/home.php on line 2
+[03-Nov-2024 18:22:00 UTC] PHP Warning:  Use of undefined constant hola - assumed 'hola' (this will throw an Error in a future version of PHP) in /home/dkawoco1/status.dkawo.com/admin/home.php on line 2
+[03-Nov-2024 18:22:02 UTC] PHP Warning:  Use of undefined constant hola - assumed 'hola' (this will throw an Error in a future version of PHP) in /home/dkawoco1/status.dkawo.com/admin/home.php on line 2
+[03-Nov-2024 18:22:08 UTC] PHP Warning:  Use of undefined constant hola - assumed 'hola' (this will throw an Error in a future version of PHP) in /home/dkawoco1/status.dkawo.com/admin/home.php on line 2
+[03-Nov-2024 18:22:10 UTC] PHP Warning:  Use of undefined constant hola - assumed 'hola' (this will throw an Error in a future version of PHP) in /home/dkawoco1/status.dkawo.com/admin/home.php on line 2
+[03-Nov-2024 22:46:20 UTC] PHP Notice:  Undefined index: role in /home/dkawoco1/status.dkawo.com/admin/login.php on line 20
+[03-Nov-2024 22:47:10 UTC] PHP Notice:  Undefined index: role in /home/dkawoco1/status.dkawo.com/admin/login.php on line 20
+[03-Nov-2024 22:49:59 UTC] PHP Notice:  Undefined index: role in /home/dkawoco1/status.dkawo.com/admin/login.php on line 20
+[03-Nov-2024 22:49:59 UTC] PHP Notice:  Undefined index: role in /home/dkawoco1/status.dkawo.com/admin/login.php on line 20
+[03-Nov-2024 22:51:32 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'role' in 'INSERT INTO' in /home/dkawoco1/status.dkawo.com/admin/register.php:25
+Stack trace:
+#0 /home/dkawoco1/status.dkawo.com/admin/register.php(25): PDOStatement->execute()
+#1 {main}
+  thrown in /home/dkawoco1/status.dkawo.com/admin/register.php on line 25
+[03-Nov-2024 22:52:31 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'role' in 'INSERT INTO' in /home/dkawoco1/status.dkawo.com/admin/register.php:25
+Stack trace:
+#0 /home/dkawoco1/status.dkawo.com/admin/register.php(25): PDOStatement->execute()
+#1 {main}
+  thrown in /home/dkawoco1/status.dkawo.com/admin/register.php on line 25

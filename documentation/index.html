@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Setup Documentation - Clidy</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Navigation Header -->
+  <header>
+    <div class="logo">Clidy</div>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Documentation</a>
+      <a href="#">Ask</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Main Container -->
+  <div class="container">
+    <!-- Sidebar with Accordion -->
+    <aside>
+      <h2>Clidy Android</h2>
+      <ul class="sidebar-menu">
+        <li class="accordion-item">
+          <a href="#admin-config">Admin Panel Configuration</a>
+          <ul class="submenu">
+            <li><a href="#upload-files">Upload Files to Server</a></li>
+            <li><a href="#create-db">Create Database</a></li>
+            <li><a href="#db-config">Configure DB Connection</a></li>
+          </ul>
+        </li>
+        <li class="accordion-item">
+          <a href="#app-config">App Configuration</a>
+          <ul class="submenu">
+            <li><a href="#open-project">Open Project</a></li>
+            <li><a href="#compile-dependencies">Compile Dependencies</a></li>
+            <li><a href="#change-name">Change App Name</a></li>
+            <li><a href="#change-package">Change Package Name</a></li>
+            <li><a href="#config-url">Configure Base URL</a></li>
+            <li><a href="#generate-keystore">Generate Keystore</a></li>
+          </ul>
+        </li>
+        <li class="accordion-item">
+          <a href="#generate-web-files">Generate Web Files</a>
+          <ul class="submenu">
+            <li><a href="#flutter-build-web">Generate Web Files with Flutter</a></li>
+          </ul>
+        </li>
+        <li><a href="#version">Version</a></li>
+      </ul>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main>
+      <!-- Admin Panel Configuration -->
+      <section id="admin-config">
+        <h1>Admin Panel Configuration</h1>
+        
+        <div class="documentation-item" id="upload-files">
+          <h3>1. Upload Files to Server</h3>
+          <p>Upload the admin panel files to your server using cPanel. Ensure each file is uploaded correctly, and verify that the directory structure matches the original project.</p>
+          <img src="img/upload_files.png" alt="Upload Files to Server">
+          <p><strong>Note:</strong> If you encounter issues while uploading files, check folder permissions and make sure all essential files, like <code>index.php</code> and configuration directories, are present.</p>
+        </div>
+        
+        <div class="documentation-item" id="create-db">
+          <h3>2. Create Database</h3>
+          <p>Create a database in cPanel with a specific name and user for your application. Then, use the database import tool to load the <code>.sql</code> file included in the admin panel project.</p>
+          <img src="img/importdb_2.png" alt="Import Database in cPanel">
+          <p><strong>Tip:</strong> When importing the <code>.sql</code> file, ensure the encoding is compatible (UTF-8 is usually recommended). This will prevent character errors in the database.</p>
+        </div>
+
+        <div class="documentation-item" id="db-config">
+          <h3>3. Configure Database Connection</h3>
+          <p>Edit the <code>database.php</code> file to set up database connection details. You will need to provide the database name, user, and password you configured in the previous step.</p>
+          <img src="img/change_database.png" alt="Change Database Connection">
+          <p><strong>Note:</strong> Ensure connection details are correct, and that the database is on the same server or that the database server allows remote connections.</p>
+        </div>
+      </section>
+
+      <!-- App Configuration -->
+      <section id="app-config">
+        <h1>App Configuration</h1>
+        
+        <div class="documentation-item" id="open-project">
+          <h3>1. Open Project</h3>
+          <p>Open the Clidy project in Android Studio or Visual Studio Code. Ensure all necessary Flutter dependencies are installed before proceeding.</p>
+          <img src="img/open_proJect_app.png" alt="Open Project in Android Studio or VS Code">
+          <p><strong>Tip:</strong> If you encounter issues opening the project in Android Studio, try synchronizing dependencies and verifying that the Flutter SDK is correctly configured.</p>
+        </div>
+
+        <div class="documentation-item" id="compile-dependencies">
+          <h3>2. Run <code>pub get</code> to Compile Dependencies</h3>
+          <p>In the <code>pubspec.yaml</code> file, run the <code>pub get</code> command to compile dependencies. This will download and install all necessary libraries for the project.</p>
+          <img src="img/pub get.png" alt="Run pub get to compile dependencies">
+          <p><strong>Tip:</strong> If dependencies do not install correctly, check your internet connection and ensure the Flutter version is compatible with the project.</p>
+        </div>
+
+        <div class="documentation-item" id="change-name">
+          <h3>3. Change App Name</h3>
+          <p>To customize the app name, edit the following files:</p>
+          <ul>
+            <li><strong>AndroidManifest.xml</strong> - Change the name that appears to the user on their device.</li>
+            <li><strong>pubspec.yaml</strong> - Update the name to reflect your app's branding.</li>
+          </ul>
+          <div class="image-group">
+            <img src="img/change_appname_manifest.png" alt="Change name in Android Manifest">
+            <img src="img/change_appname_pubspec.png" alt="Change name in pubspec.yaml">
+          </div>
+        </div>
+
+        <div class="documentation-item" id="change-package">
+          <h3>4. Change Package Name</h3>
+          <p>Configure the package name to customize the application identifier in the <code>build.gradle</code> and <code>AndroidManifest.xml</code> files.</p>
+          <ul>
+            <li><strong>build.gradle</strong> - Update the <code>applicationId</code> to the new desired package name.</li>
+            <li><strong>AndroidManifest.xml</strong> - Change the <code>package</code> attribute to the new package name.</li>
+          </ul>
+          <img src="img/change_package name_build.gradle.png" alt="Change Package Name">
+          <p><strong>Note:</strong> The package name must be unique to avoid conflicts on the Play Store.</p>
+        </div>
+
+        <div class="documentation-item" id="config-url">
+          <h3>5. Configure Admin Panel Base URL</h3>
+          <p>Open the <code>api.dart</code> file and set up the base URL for your admin panel. This will allow the app to communicate with the server correctly.</p>
+          <img src="img/change_baseurl.png" alt="Configure base URL in api.dart">
+          <p><strong>Tip:</strong> Ensure the URL is accessible from the device on which you are testing the application.</p>
+        </div>
+
+        <div class="documentation-item" id="generate-keystore">
+          <h3>6. Generate Keystore</h3>
+          <p>To sign the app, generate a keystore using the following command in the terminal. This is required to upload the app to the Play Store.</p>
+          <pre><code>keytool -genkey -v -keystore <keystore_name>.keystore -keyalg RSA -keysize 2048 -validity 10000 -alias <alias_name></code></pre>
+          <img src="img/generated_keystore.png" alt="Generate Keystore">
+          <p><strong>Tip:</strong> When generating the keystore, be sure to remember the password and alias, as they will be needed for future app updates.</p>
+        </div>
+      </section>
+
+      <!-- Generate Web Files with Flutter -->
+      <section id="generate-web-files">
+        <h1>Generate Web Files with Flutter</h1>
+        
+        <div class="documentation-item" id="flutter-build-web">
+          <h3>7. Generate Web Files with Flutter</h3>
+          <p>To generate your Flutter app files in web format, follow these steps:</p>
+          <ol>
+            <li>Run the following command in your terminal:</li>
+            <pre><code>flutter build web</code></pre>
+            <p>This command will generate the files needed to run your application as a web app. The resulting files will be located in the <code>build/web</code> folder of your project.</p>
+            
+            <li>Enable the Flutter channel for web if you haven't already:</li>
+            <pre><code>flutter config --enable-web</code></pre>
+            <p>Ensure the Flutter channel is enabled for web to generate the files correctly.</p>
+
+            <li>Upload all generated files to your domain or subdomain:</li>
+            <p>After generating the files, upload the content from the <code>build/web</code> folder to the root of your domain or subdomain to publish your web application.</p>
+          </ol>
+        </div>
+      </section>
+
+      <!-- Version -->
+      <section id="version">
+        <h1>Application Version</h1>
+        <p><strong>Current Version:</strong> 1.0.0</p>
+        <p>This is the initial version of the application, which includes complete configuration for Android devices.</p>
+        <p><strong>Update:</strong> iOS configuration will be included in future versions.</p>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
